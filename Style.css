@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+:root {
+--text: #000;
+--bg: #fff;
+--bg: #000;
+--eva01:rgb(98,32,103);
+--eva02:rgb(85,232,79);
+--white:#fff
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    /* background:linear-gradient(to top,black,55%,rgb(120, 42, 120)); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--text);
+    width: auto;
+    height: auto;
+    background-color: #222;
+    /* color: white; */
+    font-size: 24px; 
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+    --text: #fff;
+    --bg: #000;
+        }
+}
+
+.logo h1{
+    background:linear-gradient(to right,var(--eva02),05%,var(--eva01));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background: black;
+    font-family: sans-serif;
+    position:absolute;
+    top:0;
+    width:100vw;
+    z-index: 10000;
+    color: #fff;
+    }
+    nav .logo{
+    font-size: 18px;
+    font-weight:black;
+    margin: 8px;
+    }
+    nav .barnav{
+    display:grid;
+    grid-template-columns: repeat(4,auto);
+    margin-right: 30px;
+    }
+    nav .barnav div{
+    padding: 10px 20px;
+    }
+
+    nav .barnav a{
+        text-decoration: none;
+        background-image: linear-gradient(to right, var(--eva02),10%,var(--eva01));
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size .3s;
+        color: #fff;
+    }
+
+    nav .barnav a:hover, a:focus {
+        background-size: 100% 2px;
+    }
+
+    a{
+        text-decoration:underline;
+        color: white;
+    }
+    a:hover{
+        cursor: pointer;
+        color: black;
+    }
+
+    .content{
+        display: block;
+        position: absolute;
+        height: 100vh;
+        color:white;
+        margin-top: 100px;
+        text-align: justify;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+
+    .Contenedor{
+        border: 1px solid #000;
+        display: flex;
+        margin: 25px;
+        width: 50vw;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        background-color:black ;
+        align-content: center;
+        color: white;
+    }
+
+    /* animacion de juego */
+    .titulo{
+        display: block;
+    }
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 2px solid #fff;
+    background-color:white;
+    overflow: hidden;
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.track {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    background-color: black;
+}
+
+.line{
+    position: relative;
+    /* bottom: 0; */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 70%;
+    background-color: white;
+    animation: moveDown 700ms linear infinite;
+}
+
+.car {
+    position: absolute;
+    bottom: 50px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 80px;
+}
+.car img{
+    width: 50px;
+    height: 75px;
+    position: absolute;
+}
+
+.body2 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+/* Cielo con estrellas */
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: moveStar 1s linear infinite;
+}
+
+@keyframes moveStar {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Configuración de las estrellas individuales */
+.star:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+}
+
+.star:nth-child(2) {
+    left: 30%;
+    animation-duration: 8s;
+}
+.star:nth-child(3) {
+    left: 50%;
+    animation-duration: 15s;
+}
+.star:nth-child(4) {
+    left: 90%;
+    animation-duration: 9s;
+}
+.star:nth-child(5) {
+    left: 80%;
+    animation-duration: 10s;
+}
+.star:nth-child(6) {
+    left: 60%;
+    animation-duration: 5s;
+}
