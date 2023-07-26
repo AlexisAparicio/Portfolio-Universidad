@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificación a Base64 - Imagen</title>
+    <script type="text/javascript">
+        function codificarImagenBase64(){
+            var filesSelected= document.getElementById("imagenSeleccionada").files;
+            if(filesSelected.length>0){
+                var fileToLoad=filesSelected[0];
+
+                var fileReader=new FileReader();
+
+                fileReader.onload=function(fileLoadedEvent){
+                    var srcData=fileLoadedEvent.target.result; //<---convertido en BASE64
+
+                    var newImage=document.createElement('img');
+                    newImage.src=srcData;
+
+                    document.getElementById("imgTest").innerHTML=newImage.outerHTML;
+                    alert("Resultado de la conversion en Base65: "+document.getElementById("imgTest").innerHTML);
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="file" id="imagenSeleccionada" onchange="codificarImagenBase64();">
+    <div id="imgTest"></div>
+</body>
+</html>

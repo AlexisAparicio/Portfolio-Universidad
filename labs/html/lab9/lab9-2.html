@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de desarrollo V 9.2</title>
+    <script>
+        function clickCounter(){
+            console.log("entraste a la funcion");
+            if(typeof(Storage)!=="undefined"){
+            
+                if(sessionStorage.clickcount){
+                    sessionStorage.clickcount=Number(sessionStorage.clickcount)+1;
+                }else{
+                    sessionStorage.clickcount=1;
+                }
+                document.getElementById("result").innerHTML="you have clicked the button "+ sessionStorage.clickcount+" time(s) in this session ";
+            }else{
+                document.getElementById("result").innerHTML("sorry, your browser does not support web storage");
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><button onclick="clickCounter()" type="button">Click on me</button></p>
+    <div id="result">
+
+    </div>
+    <p>click the button to see the counter increase</p>
+    <p>close the brower tab or window and try again and the counter is reset</p>
+</body>
+</html>

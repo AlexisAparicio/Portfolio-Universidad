@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificación a Base24 - Texto</title>
+    <script>
+        function utf8_to_b64(str){
+            document.getElementById("resultado1").innerHTML=window.btoa(unescape(encodeURIComponent(str)));
+        }
+
+        function b64_to_utf8(str){
+            document.getElementById("resultado2").innerHTML=decodeURIComponent(escape(window.atob(str)));
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="haciabase64">
+    <input type="button" value="convertir a Base64" onclick="utf8_to_b64(document.getElementById('haciabase64').value)">
+    <label id="resultado1"></label><br>
+
+    <input type="text" id="desdebase64">
+    <input type="button" value="Base 64 a Texto" onclick="b64_to_utf8(document.getElementById('desdebase64').value)">
+    <label id="resultado2"></label><br>
+</body>
+</html>

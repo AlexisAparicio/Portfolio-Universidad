@@ -1,3 +1,4 @@
+// Captura del teclado para la animacion de moto GP
 const image = document.getElementById('myImage');
 let positionX = 0; // Inicialmente, la imagen estará en la posición más a la izquierda
 

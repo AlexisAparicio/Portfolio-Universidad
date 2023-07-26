@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efectos de transición</title>
+    <style>
+        div.swapnil{
+            width: 20px;
+            height: 20px;
+            margin: 20px auto;
+        }
+
+        div.swapnil div.estrella img{
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: 0;
+            transition: 3s linear;
+        }
+
+        div.swapnil:hover div.estrella img{
+            width: 240px;
+            height: 220px;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <p>colocar el cursos sobre el objeto para verlo en acción</p>
+    <div class="swapnil">
+        <div class="estrella"><img src="./star.png" width="20" height="20" alt=""></div>
+    </div>
+</body>
+</html>

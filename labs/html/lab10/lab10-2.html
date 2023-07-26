@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de la etiqueta Canvas en HTML</title>
+</head>
+<body>
+    
+    <canvas id="myCanvas" width="350" height="350"></canvas>
+    <canvas id="cuadrado"  width="350"height="350" style="border: 1px solid;">Tu navegador no soporta Canvas</canvas>
+    <canvas id="circulo" width="120" height="120" style="border: 1px solid;">Tu navegador no soporta Canvas</canvas>
+    <canvas id="triangulo" width="320" height="200" style="border: 0px solid;">Tu navegador no soporta Canvas</canvas>
+    <canvas id="linea" width="320" height="200" style="border: 0px solid;">Tu navegador no soporta Canvas</canvas>
+
+    <script type="text/javascript">
+        var canvas=document.getElementById('myCanvas');
+        var ctx=canvas.getContext('2d');
+        ctx.fillStyle='#FF0000';
+        ctx.fillRect(0,0,80,100);
+    </script>
+
+<script type="text/javascript">
+    var canvas=document.getElementById('cuadrado');
+    var ctx=canvas.getContext('2d');
+    ctx.fillStyle='blue';
+    ctx.fillRect(10,10,100,50);
+</script>
+
+<script type="text/javascript">
+    var canvas=document.getElementById('circulo');
+    var ctx=canvas.getContext('2d');
+    ctx.fillStyle="red";
+    ctx.arc(60,60,50,0,Math.PI*2,true);
+    ctx.closePath();
+    ctx.fill();
+</script>
+
+<script type="text/javascript">
+    var c=document.getElementById('triangulo');
+    var r=c.getContext('2d');
+   r.beginPath();
+   r.moveTo(300,200);
+   r.lineTo(200,150);
+   r.lineTo(200,0);
+   r.closePath();
+   r.stroke();
+</script>
+
+<script type="text/javascript">
+    var c=document.getElementById('linea');
+    var r=c.getContext('2d');
+
+   r.moveTo(20,10);
+   r.lineTo(130,100);
+   r.lineWidth=7;
+   r.strokeStyle="blue";
+   r.stroke();
+</script>
+</body>
+</html>

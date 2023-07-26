@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="glCanvas" width="640" height="480"></canvas>
+<script>
+    function main(){
+        const canvas=document.querySelector("#glCanvas");
+        // Inicializar contexto GL
+        const gl=canvas.getContext("webgl");
+
+        //Continuar solo si webGL esta disponible y funcionando
+        if(gl===null){
+            alert("No se puede inicializar WebGL. Es posible que su navegador o maquina no lo admita");
+            return;
+        }
+
+        //Establecer color claro a negro totalmente opaco
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        //Borrar el bufer de color con el color claro especifico
+        gl.clear(gl.COLOR_BUFFER_BIT);
+    }
+
+    window.onload=main;
+
+    const position=[
+        //Cara frontal
+    -1.0,-1.0,1.0,
+    1.0,-1.0,1.0,
+    1.0,1.0,1.0,
+    -1.0,1.0,1.0,
+
+    //Cara Posterior
+    -1.0,-1.0,-1.0,
+    -1.0,1.0,-1.0,
+    1.0,1.0,-1.0,
+    1.0,-1.0,-1.0,
+
+    //Cara superior
+    -1.0,1.0,-1.0,
+    -1.0,1.0,1.0,
+    1.0,1.0,1.0,
+    1.0,1.0,-1.0,
+
+    //Cara inferior 
+    -1.0,-1.0,-1.0,
+    1.0,-1.0,-1.0,
+    1.0,-1.0,1.0,
+    -1.0,-1.0,1.0,
+
+    //Cara Derecha
+    -1.0,-1.0,-1.0,
+    1.0,-1.0,-1.0,
+    1.0,1.0,1.0,
+    1.0,-1.0,1.0,
+
+    //Cara izquierrda
+    -1.0,-1.0,-1.0,
+    -1.0,-1.0,1.0,
+    -1.0,1.0,1.0,
+    -1.0,1.0,-1.0,
+    ]
+
+    const numComponents =3;
+
+    fl.vertexAttribPointer(
+        programInfo.attribLocations.vertexPosition,
+        numComponents,
+        type,
+        normalize,
+        stride,
+        offset);
+gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
+
+const faceColor=[
+    [1.0,1.0,1.0,1.0],
+    [1.0,0.0,0.0,1.0],
+    [0.0,1.0,0.0,1.0],
+    [0.0,0.0,1.0,1.0],
+    [1.0,1.0,0.0,1.0],
+    [1.0,0.0,1.0,1.0],
+];
+
+// convierte la matriz de colores en una tabla para todos los vértices
+var color=[];
+
+for(var j=0; j<faceColor.length;++j){
+    const c=faceColor[j];
+
+    // Repite cada color cuatro vces para los cuatro vertices de la cara
+    color=color.concat(c,c,c,c);
+}
+
+const colorBuffer =gl.createBuffer();
+gl.blindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors),gl.STATIC_DRAW);
+
+const indexBuffer = gl.createBuffer();
+gl.blindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+
+const indices=[
+    0,1,2, 0,2,3,
+    4,5,6, 4,6,7,
+    8,9,10, 8,10,11,
+    12,13,14, 12,14,15,
+    16,17,18, 16,18,19,
+    20,21,22, 20,22,23,];
+
+gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+
+return{
+    position:positionBuffer,
+    color:colorBuffer,
+    indices:indexBuffer,
+}
+
+gl.blindBuffer(gl.ELEMENT_ARRAY_BUFFER,buffer.indices);
+
+const vertexCount=36;
+const type=gl.UNSIGNED_SHORT;
+const offset=0;
+gl.drawElements(gl.TRIANGLES,vertexCount, type,offset);
+
+mat4.rotar(modelViewMatrix,modelViewMatrix,cubeRotation*.7,[0,1,0]);
+</script>
+</body>
+</html>

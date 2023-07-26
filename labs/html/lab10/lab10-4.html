@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css"> #div1 {width:70px;height:70px;padding:10px;border:1px solid #aaaa;}</style>
+    <script>
+        function allowDrop(ev)
+        {
+            ev.preventDefault();
+        }
+
+        function drag(ev)
+        {
+            ev.dataTransfer.setData("Text",ev.target.id);
+        }
+        function drop(ev)
+        {
+            ev.preventDefault();
+            var data=ev.dataTransfer.getData("Text");
+            ev.target.appenChild(document.getElementById(data));
+        }
+    </script>
+</head>
+<body>
+    <p>Arrastrar la imagen al rectangulo</p>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <img id="drag1" draggable="true" ondragstart="drag(event)" width="69px" height="69px" src="./img/imglab10.JPG" alt="">
+</body>
+</html>

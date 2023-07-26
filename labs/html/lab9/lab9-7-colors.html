@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+    <script type="text/javascript">
+        function mostrarcolor(){
+            var x=document.getElementById("icolor");
+            alert(x.value);
+        }
+    </script>
+</head>
+<body>
+    <input type="color" name="color" id="icolor" value="#000000">
+    <!--DEvuelve el Valor Hexadecimal del color-->
+    <input type="button" onclick="mostrarcolor()" value="Mostrar Color">
+</body>
+</html>

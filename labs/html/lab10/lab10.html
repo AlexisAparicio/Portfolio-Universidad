@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de la etiqueta Canvas en HTML</title>
+</head>
+<body>
+    <canvas id="cuadrado" width="350" height="350" style="border:ipx solid">
+    Tu Navegador no soporta canvas</canvas>
+
+    <script type="text/javascript">
+        var canvas=document.getElementById('cuadrado');
+        var ctx=canvas.getContext('2d');
+        ctx.fillStyle="blue";
+        ctx.fillRect(10,10,100,50);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de CSS3 con el metodo rotate3d()</title>
+    <style>
+        .container{
+            margin:50px;
+            width: 125px;
+            height: 125px;
+            perspective: 300px;
+            border: 4px solid #a2b058;
+            background: #f0f5d8;
+        }
+
+        .transformed{
+            transform: rotate3d(0,1,0, 60deg);
+        }
+    </style>
+</head>
+<body>
+    <h2>Antes de rotar</h2>
+    <div class="container">
+        <img src="./imgs_transf3d/club.jpg" alt="club Card">
+    </div>
+
+    <h2>Despues de rotar</h2>
+    <div class="container">
+        <img src="./imgs_transf3d/club.jpg" class="transformed" alt="Club Card">
+    </div>
+</body>
+</html>

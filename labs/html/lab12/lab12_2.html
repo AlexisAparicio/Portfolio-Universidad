@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Animación</title>
+    <style>
+        #animated_div{
+            text-align: center;
+            width: 60px;
+            height: 40px;
+            background: #6699FF;
+            color: #ffff;
+            position: relative;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+            animation: animated_div 5s infinite;
+            border-radius: 5px;
+        }
+
+        @keyframes animated_div{
+            0% {left:0px;}
+            20% {left:50px;background-color: green;}
+            40% {left:140px;background-color: red;}
+            60% {left:280px;background-color: yellow;}
+            80% {left:425px;background-color: blue;}
+            100% {left:0px;background-color: pink;}
+        }
+    </style>
+</head>
+<body>
+    <div id="animated_div">
+        CSS3
+        <span style="font-size:10px">Desasoft V</span>
+    </div>
+</body>
+</html>
